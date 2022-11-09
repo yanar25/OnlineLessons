@@ -5,23 +5,22 @@ count_ = 0
 
 
 def count_funk(funk):
-    def f():
+    def f(*arg):
+        print(arg)
         global count_
-        funk()
+        fun = funk(arg)
         count_ += 1
-        return funk()
+        return fun
 
     return f
 
 
 @count_funk
-def re():
+def re(a):
+    print(a)
     return 2 + 8
 
 
-@count_funk
-def re():
-    return 2 + 8
-
-
+print(count_funk(re(3)))
+print(count_funk(re(3)))
 print(count_)

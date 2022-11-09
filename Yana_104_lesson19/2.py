@@ -5,8 +5,8 @@
 # выполнения
 
 def debug(func):
-    def df():
-        funcname = func.__name__
+    def df(*args, **kwargs):
+        funcname = func.__name__, args, kwargs
         print(funcname)
         func()
 
